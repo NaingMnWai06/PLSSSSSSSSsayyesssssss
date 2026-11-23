@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kyi Sin Khant ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #f8b9d0, #e8c8ff);
+    overflow: hidden;
+}
+
+.card {
+    width: 90%;
+    max-width: 430px;
+    padding: 30px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 28px;
+    box-shadow: 0 15px 50px #c45c8950;
+    z-index: 2;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* PHOTO */
+.photo-frame {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    padding: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff78a8, #d9a0ff);
+    box-shadow: 0 5px 25px #e88bb6;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h1 {
+    color: #d94f83;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+p {
+    color: #765466;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.proposal {
+    font-size: 23px;
+    font-weight: bold;
+    color: #d94f83;
+    margin: 22px 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+button {
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.yes {
+    background: #e85d91;
+    color: white;
+}
+
+.think {
+    background: #fff0f5;
+    color: #d94f83;
+    border: 1px solid #f3a6c2;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#response {
+    color: #d94f83;
+    margin-top: 20px;
+    line-height: 1.8;
+    font-weight: 600;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: float 7s linear forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+
+    <div class="photo-frame">
+        <!-- Replace her-photo.jpg with her actual photo filename -->
+        <img src="photo/photo_2026-11-19_12-31-40.jpg"
+             alt="Kyi Sin Khant"
+             onerror="this.style.display='none';
+             this.parentElement.innerHTML='🌸';">
+    </div>
+
+    <h1>For KYI SIN KHANT 💗</h1>
+
+    <p>
+        Hey, Kyi Sin Khant...<br><br>
+        I don't know how to put everything
+        into words, but there's something
+        I've been wanting to tell you.
+        <br><br>
+        You make ordinary moments feel
+        a little more special.
+    </p>
+
+    <div class="proposal">
+        Will you be mine? ❤️
+    </div>
+
+    <div class="buttons">
+        <button class="yes" onclick="yesAnswer()">
+            Yes! ❤️
+        </button>
+
+        <button class="think" onclick="thinkAnswer()">
+            Let me think a few days 🌷
+        </button>
+    </div>
+
+    <div id="response"></div>
+
+</div>
+
+<script>
+function yesAnswer() {
+    document.getElementById("card").innerHTML = `
+        <div style="font-size:75px">💖</div>
+        <h1>YOU MADE ME HAPPY!</h1>
+        <p>
+            Thank you, Kyi Sin Khant. ❤️
+            <br><br>
+            I hope this is the beginning
+            of something beautiful.
+            <br><br>
+            Let's make some wonderful memories together. 🌸
+        </p>
+    `;
+}
+
+function thinkAnswer() {
+    document.getElementById("response").innerHTML =
+        "Of course! Take your time. ❤️<br><br>" +
+        "I don't want you to feel pressured. " +
+        "I'll respect whatever you decide. 🌷";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = ["❤️","💕","💗","🌸","💖"][
+        Math.floor(Math.random()*5)
+    ];
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (15 + Math.random()*20) + "px";
+    heart.style.animationDuration = (5 + Math.random()*5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
